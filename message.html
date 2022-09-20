@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webchat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cssAll.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+             <img src="/image/Ellipse 1.png" alt="" class="thumnail">
+            <nav class="header-nav">
+               
+                <ul>
+                    <li class="active-nav"><a href=""><img src="/image/Home.png" alt=""></a></li>
+                    <li class="click-chat"><a href="#"><img src="/image/Chat.png" alt=""></a></li>
+                    <li><a href=""></a><img src="/image/notification.png" alt=""></li>
+                    <li><a href=""></a><img src="/image/Setup.png" alt=""></li>
+                    <li><a href=""></a><img src="/image/Exit.png" alt=""></li>
+                </ul>
+            </nav>
+        </div> 
+        <div class="colum1">
+            <div class="search">
+                <input type="text" placeholder="Tìm kiếm">
+            </div>
+            <div class="Groups">
+                <div class="option">
+                    <p>Groups</p>
+                    <ul >
+                        <li class="option-click"> 
+                            <div>
+                                 <img src="/image/option.png" alt="">
+                             <ul class="menu">
+                                <li><a href="/">Cài đặt</a></li>
+                                <li><a href="/">Tùy chọn</a></li>
+                                <li><a href="/">Xóa</a></li>
+                            </ul>
+                            </div>
+                           
+                        </li>                  
+                    </ul>
+                </div>
+               
+                <div class="item">
+                    <img src="image/Ellipse 2.png" alt="">
+                    <div class="content">
+                        <p class="friends">Friends Reunion</p>
+                        <p>Hi Guys, Wassup!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/Ellipse 2.png" alt="">
+                    <div class="content">
+                        <p class="friends">Friends Hiếu</p>
+                        <p>Hi Guys, Wassup!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/Ellipse 2.png" alt="">
+                    <div class="content">
+                        <p class="friends">Friends Long</p>
+                        <p>Hi Guys, Wassup!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="Recents">
+              <div class="option">
+                    <p>Recents</p>
+                    <ul>
+                        <li class="option-click"> 
+                            <img src="/image/option.png" alt="">
+                             <ul class="menu">
+                                <li><a href="/">Cài đặt</a></li>
+                                <li><a href="/">Tùy chọn</a></li>
+                                <li><a href="/">Xóa</a></li>
+                            </ul>
+                        </li>                  
+                    </ul>
+                </div>
+               
+                <div class="item">
+                    <img src="image/Ellipse 2.png" alt="">
+                    <div class="content">
+                        <p class="friends">Friends Reunion</p>
+                        <p>Hi Guys, Wassup!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/Ellipse 2.png" alt="">
+                    <div class="content">
+                        <p class="friends">Friends Reunion</p>
+                        <p>Hi Guys, Wassup!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/Ellipse 2.png" alt="">
+                    <div class="content">
+                        <p class="friends">Friends Reunion</p>
+                        <p>Hi Guys, Wassup!</p>
+                    </div>
+                </div>
+               <div class="item">
+                    <img src="image/Ellipse 2.png" alt="">
+                    <div class="content">
+                        <p>Friends Reunion</p>
+                        <p>Hi Guys, Wassup!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="memberchat">
+                <div class="item">
+                    <img src="image/Ellipse 2.png" alt="">
+                    <div class="content">
+                        <p class="friends-message"></p>
+                        <p>Hi Guys, Wassup!</p>
+                    </div>
+                </div>
+            </div>     
+        </div>
+        <div class="chat-introduction">
+            <h2>Chào mừng bạn đến với ứng dụng chát của chúng tôi</h2>    
+        </div>     
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+      const $menu = $('.option ul li ul')
+const onMouseUp = e => {
+ if (!$menu.is(e.target) // If the target of the click isn't the container...
+   && $menu.has(e.target).length === 0) // ... or a descendant of the container.
+   {
+     $('.option ul li ul').removeClass('optionSetting')
+  }
+}
+ $(document).ready(function() 
+ {
+// xử lí option
+   $('.option-click').click(function(e) 
+    { 
+          $(this).find("ul.menu").toggleClass('optionSetting').promise().done(() => {
+    if ($(this).find("ul.menu").hasClass('optionSetting')) {
+      $(document).on('mouseup', onMouseUp) // Only listen for mouseup when menu is active...
+    } else {
+      $(document).off('mouseup', onMouseUp) // else remove listener.
+    }
+  }) 
+    });
+// xử lí message click
+$('.Groups .item').click(function(e) {
+    $('.chat-introduction').addClass('hide')
+    $('.chat').addClass('show')
+    console.log($(this).find("p.friends").text())
+    $('.friends-message').html($(this).find("p.friends").text())
+     if($(window).width() <=800) {
+        $('.colum1').addClass('hide')
+    $('.chat').addClass('show')
+     }
+
+
+});
+    $('.header-nav ul li').click(function(e) {
+        $('.header-nav ul li').removeClass('active-nav')
+        $(this).addClass('active-nav')
+    })
+$(window).on("resize", function(event){
+if($(this).width() > 800) {
+   $('.colum1').removeClass('hide')
+}
+});
+$('.click-chat').click(function(e) {
+    if($(window).width() <=800) {
+        $('.colum1').removeClass('hide')
+        $('.chat').addClass('hide')
+    }
+})
+ });
+</script>
+</html>

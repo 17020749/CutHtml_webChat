@@ -1,0 +1,19 @@
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+ul li {
+  list-style: none;
+}
+ul li a {
+  text-decoration: none;
+}
+input:focus {
+  border: none;
+}
+.active-nav {
+  border-right: 5px solid yellow;
+  background-color: #3967c4;
+}
