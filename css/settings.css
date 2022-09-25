@@ -7,6 +7,7 @@
   grid-template-rows: 70px auto;
   grid-template-columns: 100px auto;
   gap: 1rem;
+  height: 94vh;
 }
 .header {
   grid-area: navbar;
@@ -26,6 +27,7 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   padding: 1rem;
+  overflow: auto;
 }
 .Profile-Settings-setup {
   padding: 1.5rem;
