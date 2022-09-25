@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/cssAll.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container mess">
         <div class="header">
              <img src="/image/Ellipse 1.png" alt="" class="thumnail">
             <nav class="header-nav">
@@ -159,24 +159,34 @@ $('.Groups .item').click(function(e) {
     $('.friends-message').html($(this).find("p.friends").text())
      if($(window).width() <=800) {
         $('.colum1').addClass('hide')
-    $('.chat').addClass('show')
+    // $('.chat').addClass('show')
      }
 
 
 });
+// active nav
     $('.header-nav ul li').click(function(e) {
         $('.header-nav ul li').removeClass('active-nav')
         $(this).addClass('active-nav')
     })
+    // responsive pc
 $(window).on("resize", function(event){
 if($(this).width() > 800) {
    $('.colum1').removeClass('hide')
+    if ($('.chat-introduction').hasClass('hide')) {
+            $('.chat').addClass('show')
+    }
+
+}
+else {
+    $('.chat').removeClass('show')
 }
 });
+// xử lí click chát
 $('.click-chat').click(function(e) {
     if($(window).width() <=800) {
         $('.colum1').removeClass('hide')
-        $('.chat').addClass('hide')
+        $('.chat').removeClass('show')
     }
 })
  });
