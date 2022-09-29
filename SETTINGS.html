@@ -37,7 +37,7 @@
             </div>
             <div class="Profile-Settings-setup">
                 <ul>
-                    <li><img src="image/profile_setting.png" alt=""> <span>Profile.</span></li>
+                    <li><img src="image/profile_setting.png" alt="" id="profile"> <span>Profile.</span></li>
                     <li><img src="image/editprofile.png" alt=""> <span>Edit Profile Name.</span></li>
                     <li><img src="image/editstatus.png" alt=""> <span>Edit Profile Status Info.</span></li>
                     <li><img src="image/Edit_Profile_Photo..png" alt=""> <span>Edit Profile Photo.</span></li>
@@ -66,7 +66,81 @@
                 </ul>
             </div>
         </div>
-
+        <div class="profile modal hide ">
+            <div class="profile-introduct center">
+                <h3>Thông tin tài khoản</h3>
+            </div>
+            <div class="profile-image center">
+                <img src="" alt="">
+                <p>Nguyễn văn long</p>
+            </div>
+            <div class="profile-infor">
+                <p>Thông tin cá nhân</p>
+                <div class="profile-infor-detail">
+                    <div>
+                         <p>Số điện thoại</p> <span>0123456789</span>
+                    </div>
+                    <div >
+                         <p>Giới tính</p> <span>Nam</span>
+                    </div>
+                    <div>
+                         <p>Ngày sinh</p> <span>1/2/2022</span>
+                    </div>        
+                </div>
+            </div>
+            <div class="profile-change">
+                <button id="update-infor">Cập nhập thông tin</button>
+            </div>
+        </div>
+        <div class="profile-update modal-update hide ">
+            <div class="profile-introduct center">
+                <h3>Cập nhập thông tin</h3>
+            </div>
+            <div class="profile-image center">
+                <img src="" alt="">
+                <p>tên hiển thị</p>
+                <form action="">
+                    <input type="text">
+                </form>
+            </div>
+            <div class="profile-infor">
+                <p>Thông tin cá nhân</p>
+                <div class="profile-infor-detail">
+                    <div>
+                         <p>Giới tính</p>
+                         <input type="checkbox" name="male">Nam
+                          <input type="checkbox" name="male">Nữ
+                    </div>
+                    <div>
+                         <p>Ngày sinh</p>
+                         <input type="date">
+                    </div>        
+                </div>
+                <div class="profile-change">
+                <button id="update-infor">Hoàn thành</button>
+            </div>
+            </div>
+        </div>
+        <div class="overlay hide"> 
+        </div>
     </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#profile').click(function(){
+            $('.profile').toggleClass('hide')
+            $('.overlay').removeClass('hide')
+            console.log(this)
+        })
+        $('.overlay').click(function(){
+             $('.overlay').toggleClass('hide')
+             $('.profile').addClass('hide')
+             $('.profile-update').addClass('hide')
+        })
+         $('#update-infor').click(function(){
+            $('.profile-update').toggleClass('hide')
+        })
+    })
+</script>
 </html>

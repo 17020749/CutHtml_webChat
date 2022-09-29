@@ -46,3 +46,91 @@
 .Profile-Settings-setup img {
   width: 25px;
 }
+.modal,
+.modal-update {
+  position: fixed;
+  width: 350px;
+  height: 90vh;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  margin-top: -45vh; /* Negative half of height. */
+  margin-left: -175px; /* Negative half of width. */
+  background: #e5e7eb;
+  box-shadow: yellowgreen;
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.5s;
+  animation-name: zoom;
+  animation-duration: 0.5s;
+  z-index: 10000;
+  overflow: auto;
+}
+.modal-update {
+  z-index: 100001;
+}
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: fade 0.5s linear;
+}
+.profile-introduct {
+  background-color: #ffffff;
+  padding: 1rem;
+}
+.profile-image {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+.profile-infor {
+  padding: 1rem;
+  background-color: #ffffff;
+}
+.profile-infor-detail div {
+  display: flex;
+  column-gap: 20px;
+  line-height: 2rem;
+}
+.profile-infor-detail div p {
+  width: 100px;
+}
+.profile-change {
+  text-align: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.zoom-modal {
+  display: block;
+}

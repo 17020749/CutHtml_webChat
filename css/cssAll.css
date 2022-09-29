@@ -34,3 +34,6 @@ input:focus {
   border-right: 5px solid yellow;
   background-color: #3967c4;
 }
+.center {
+  text-align: center;
+}
