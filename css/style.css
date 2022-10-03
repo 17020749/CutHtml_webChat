@@ -52,9 +52,12 @@
   display: flex;
   align-items: center;
   column-gap: 1rem;
+}
+.Groups .item,
+.Recents .item {
   padding: 0.5rem;
 }
-.item:hover {
+.Groups .item:hover {
   background-color: rgb(218, 218, 218);
   cursor: pointer;
 }
@@ -74,6 +77,7 @@
 }
 .chat,
 .chat-introduction {
+  display: flex;
   grid-column-start: 4;
   grid-column-end: 10;
   background: #ffffff;
@@ -83,14 +87,32 @@
 .chat {
   display: none;
 }
+.chat-member {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 .chat-introduction {
   padding: 2rem;
   text-align: center;
 }
 .memberchat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
 }
-
+.send-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.icon-message i:not(:last-child) {
+  margin-right: 10px;
+}
 .header-nav img,
 .item img {
   width: 30px;

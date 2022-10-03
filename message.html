@@ -7,6 +7,7 @@
     <title>Webchat</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cssAll.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 <body>
     <div class="container mess">
@@ -30,21 +31,19 @@
             <div class="Groups">
                 <div class="option">
                     <p>Groups</p>
-                    <ul >
+                    <ul>
                         <li class="option-click"> 
                             <div>
-                                 <img src="/image/option.png" alt="">
-                             <ul class="menu">
-                                <li><a href="/">Cài đặt</a></li>
-                                <li><a href="/">Tùy chọn</a></li>
-                                <li><a href="/">Xóa</a></li>
-                            </ul>
-                            </div>
-                           
+                                <img src="/image/option.png" alt="">
+                                <ul class="menu">
+                                    <li><a href="/">Cài đặt</a></li>
+                                    <li><a href="/">Tùy chọn</a></li>
+                                    <li><a href="/">Xóa</a></li>
+                                </ul>
+                            </div>                         
                         </li>                  
                     </ul>
-                </div>
-               
+                </div>            
                 <div class="item">
                     <img src="image/Ellipse 2.png" alt="">
                     <div class="content">
@@ -107,15 +106,31 @@
             </div>
         </div>
         <div class="chat">
-            <div class="memberchat">
-                <div class="item">
-                    <img src="image/Ellipse 2.png" alt="">
-                    <div class="content">
-                        <p class="friends-message"></p>
-                        <p>Hi Guys, Wassup!</p>
+            <div class="chat-member">
+                <div class="memberchat">
+                    <div class="item">
+                        <img src="image/Ellipse 2.png" alt="">
+                        <div class="content">
+                            <p class="friends-message"></p>
+                            <p>Hi Guys, Wassup!</p>
+                        </div>         
+                    </div>
+                    <div class="icon-message">
+                        <i class="fi fi-rr-search"></i>
+                        <i class="fi fi-rr-phone-call"></i>
+                        <i class="fi fi-rr-video-camera-alt"></i>
                     </div>
                 </div>
-            </div>     
+                <div class="send-message">
+                    <div class="">
+                        <span></span>
+                    </div>
+                    <div class="icon-message">
+                        <i class="fi fi-rr-microphone"></i>
+                        <i class="fi fi-rr-smile"></i>
+                    </div>
+                </div>
+            </div>            
         </div>
         <div class="chat-introduction">
             <h2>Chào mừng bạn đến với ứng dụng chát của chúng tôi</h2>    
@@ -173,7 +188,8 @@ if($(this).width() > 800) {
 
 }
 else {
-    $('.chat').removeClass('show')
+    if($('.colum1').hasClass('hide'))
+    $('.chat').addClass('show')
 }
 });
 // xử lí click chát
